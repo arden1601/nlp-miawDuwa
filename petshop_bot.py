@@ -2,17 +2,13 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 import os
-<<<<<<< HEAD
 import logging
 from logging.handlers import TimedRotatingFileHandler
-from motor.motor_asyncio import AsyncIOMotorClient
-=======
 from motor.motor_asyncio import AsyncIOMotorClient
 from datetime import datetime, timedelta
 import pytz
 
 load_dotenv()
->>>>>>> origin/main
 
 # Load .env
 load_dotenv()
@@ -47,11 +43,7 @@ INFO = {
     'address': "Our vet clinic is located at 123 Pet Lane, Animal City.",
     'products': "We sell a variety of pet food, toys, and grooming supplies for cats, dogs, birds, and fish.",
     'fallback': "I'm sorry, I didn't understand that. You can ask me about our hours, vet, address, or products!",
-<<<<<<< HEAD
-    'greeting': "Hello there! I'm the Pet Shop bot. How can I help you today?",
-=======
     'greeting': "Hello there! I'm the Vet Clinic bot. How can I help you today?"
->>>>>>> origin/main
 }
 
 # Add this near the top with other constants
@@ -64,15 +56,10 @@ RULES = {
     'hours': ['hours', 'open', 'closed', 'time', 'when'],
     'vet': ['vet', 'veterinarian', 'doctor', 'on duty'],
     'address': ['address', 'location', 'where', 'find'],
-<<<<<<< HEAD
     'products': ['products', 'food', 'toys', 'supplies', 'sell', 'buy'],
-    'greeting': ['hello', 'hi', 'hey']
-=======
-    'products': ['products', 'food', 'toys', 'supplies', 'sell'],
     'greeting': ['hello', 'hi', 'hey'],
     'booking': ['book', 'appointment', 'schedule', 'booking'],
     'doctors': ['available', 'doctors', 'who']
->>>>>>> origin/main
 }
 
 # Add MongoDB connection
@@ -150,7 +137,7 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-<<<<<<< HEAD
+    
     if message.author == bot.user:
         return
 
@@ -167,7 +154,7 @@ async def on_message(message):
                 return
 
         if any(keyword in content for keyword in ['hello', 'hi', 'hey']):
-            response = "Hello there! I'm the Pet Shop bot. How can I help you today?"
+            response = "Hello there! I'm the Vet Clinic bot. How can I help you today?"
             await message.channel.send(response)
             logging.info(f"Responded with: {response}")
         else:
@@ -185,46 +172,6 @@ async def on_command_error(ctx, error):
     """Tangkap error command"""
     logging.error(f"Command error in {ctx.command}: {error}", exc_info=True)
     await ctx.send("Oops! Something went wrong. Please try again later.")
-
-# Run bot
-bot.run(DISCORD_TOKEN)
-=======
-    """This event fires whenever a message is sent in a channel the bot can see."""
-    if message.author == bot.user:
-        return
-
-    content = message.content.lower()
-
-    # First, process commands
-    await bot.process_commands(message)
-
-    # Then process rule-based responses
-    for intent, keywords in RULES.items():
-        if any(keyword in content for keyword in keywords):
-            if intent == 'booking':
-                await message.channel.send(
-                    "To book an appointment, use: !book <doctor name> <time> example: !book 'Dr. John Smith' '10:00'\n"
-                    "To see available doctors, use: !doctors"
-                )
-            elif intent == 'doctors':
-                await doctors(message.channel)
-            else:
-                await message.channel.send(INFO[intent])
-            return
-
-    # If no rule was matched, send the fallback message
-    # In the on_message event, update the booking message
-    if intent == 'booking':
-        await message.channel.send(
-            "To book an appointment, use: !book \"doctor name\" \"time\"\n"
-            "To see available doctors and times, use: !doctors\n"
-            "To check your appointments, use: !myappointments"
-        )
-    # You can add a greeting check here for a more refined response
-    if any(keyword in content for keyword in ['hello', 'hi', 'hey']):
-        await message.channel.send("Hello there! I'm the Vet Clinic bot. How can I help you today?")
-    else:
-        await message.channel.send(INFO['fallback'])
 
 async def get_available_doctors(date):
     """Get available doctors and their free time slots for a specific date"""
@@ -325,5 +272,4 @@ async def myappointments(ctx):
         await ctx.send("Sorry, there was an error fetching your appointments.")
 # Run the bot with your token
 # Make sure to replace 'YOUR_BOT_TOKEN' with your actual token
-bot.run(token)
->>>>>>> origin/main
+bot.run(DISCORD_TOKEN)
