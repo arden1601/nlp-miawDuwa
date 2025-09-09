@@ -1,7 +1,7 @@
 # 🐾 Pet Shop Discord Bot
 
 Pet Shop Bot adalah bot Discord sederhana yang dibuat untuk membantu **klinik hewan / pet shop** berinteraksi dengan pelanggan secara lebih cepat dan interaktif.  
-Bot ini dapat menjawab pertanyaan umum seperti jam operasional, dokter yang sedang bertugas, alamat klinik, hingga produk yang tersedia.  
+Bot ini dapat menjawab pertanyaan umum seperti jam operasional, dokter yang sedang bertugas, alamat klinik, hingga produk yang tersedia. Selain itu bot ini juga dapat melakukan booking appointment melalui chat.
 
 ---
 
@@ -44,7 +44,8 @@ Setiap interaksi pengguna dengan bot terekam ke dalam file `logs/bot.log` untuk 
 - [discord.py](https://github.com/Rapptz/discord.py)  
 - [motor](https://motor.readthedocs.io/) (MongoDB Async Driver)  
 - [python-dotenv](https://pypi.org/project/python-dotenv/)  
-- [logging](https://docs.python.org/3/library/logging.html)  
+- [logging](https://docs.python.org/3/library/logging.html)
+- [MongoDB] (https://www.mongodb.com)  
 
 ---
 
