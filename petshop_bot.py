@@ -170,6 +170,7 @@ async def create_booking(user_id, doctor, date, time):
     }
     await db.appointments.insert_one(booking)
 
+
 @bot.command()
 async def doctors(ctx):
     """Show available doctors and their time slots for today"""
