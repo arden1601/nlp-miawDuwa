@@ -45,7 +45,7 @@ Setiap interaksi pengguna dengan bot terekam ke dalam file `logs/bot.log` untuk 
 - [motor](https://motor.readthedocs.io/) (MongoDB Async Driver)  
 - [python-dotenv](https://pypi.org/project/python-dotenv/)  
 - [logging](https://docs.python.org/3/library/logging.html)
-- [MongoDB] (https://www.mongodb.com)  
+- [MongoDB](https://www.mongodb.com)  
 
 ---
 
