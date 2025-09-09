@@ -1,2 +1,7 @@
 discord.py
 dotenv
+motor
+pytz
+pymongo
+pytest
+pytest-asyncio
