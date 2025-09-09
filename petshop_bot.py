@@ -137,14 +137,11 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-    
     if message.author == bot.user:
         return
-
     try:
         content = message.content.lower()
         logging.info(f"Message from {message.author}: {content}")
-
         # --- Rule-Based Logic ---
         for intents, keywords in RULES.items():
             if any(keyword in content for keyword in keywords):
