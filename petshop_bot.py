@@ -2,28 +2,56 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 import os
+<<<<<<< HEAD
+import logging
+from logging.handlers import TimedRotatingFileHandler
+from motor.motor_asyncio import AsyncIOMotorClient
+=======
 from motor.motor_asyncio import AsyncIOMotorClient
 from datetime import datetime, timedelta
 import pytz
 
 load_dotenv()
+>>>>>>> origin/main
 
-token = os.getenv("DISCORD_TOKEN")
-# Enable the required intents, including message_content
+# Load .env
+load_dotenv()
+DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
+
+# --- Logging setup ---
+if not os.path.exists("logs"):
+    os.makedirs("logs")
+
+log_handler = TimedRotatingFileHandler(
+    "logs/bot.log", when="midnight", interval=1, backupCount=7, encoding="utf-8"
+)
+log_handler.suffix = "%Y-%m-%d"
+
+# Setup logging
+logging.basicConfig(
+    handlers=[log_handler],
+    level=logging.INFO, 
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
+
+# Enable intents
 intents = discord.Intents.default()
 intents.message_content = True
 
-# Set the command prefix. We won't use it for our rule-based system, but it's good practice.
+# Bot setup
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 # --- Define the data for your bot's responses ---
-# You can easily change these without touching the code logic.
 INFO = {
     'hours': "We are open from 9:00 AM to 6:00 PM, Monday to Saturday. We are closed on Sundays.",
     'address': "Our vet clinic is located at 123 Pet Lane, Animal City.",
     'products': "We sell a variety of pet food, toys, and grooming supplies for cats, dogs, birds, and fish.",
     'fallback': "I'm sorry, I didn't understand that. You can ask me about our hours, vet, address, or products!",
+<<<<<<< HEAD
+    'greeting': "Hello there! I'm the Pet Shop bot. How can I help you today?",
+=======
     'greeting': "Hello there! I'm the Vet Clinic bot. How can I help you today?"
+>>>>>>> origin/main
 }
 
 # Add this near the top with other constants
@@ -36,10 +64,15 @@ RULES = {
     'hours': ['hours', 'open', 'closed', 'time', 'when'],
     'vet': ['vet', 'veterinarian', 'doctor', 'on duty'],
     'address': ['address', 'location', 'where', 'find'],
+<<<<<<< HEAD
+    'products': ['products', 'food', 'toys', 'supplies', 'sell', 'buy'],
+    'greeting': ['hello', 'hi', 'hey']
+=======
     'products': ['products', 'food', 'toys', 'supplies', 'sell'],
     'greeting': ['hello', 'hi', 'hey'],
     'booking': ['book', 'appointment', 'schedule', 'booking'],
     'doctors': ['available', 'doctors', 'who']
+>>>>>>> origin/main
 }
 
 # Add MongoDB connection
@@ -54,6 +87,17 @@ DOCTORS = {
     "Dr. Sarah Chen": "Pet Dentistry"
 }
 
+# Add MongoDB connection
+MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
+client = AsyncIOMotorClient(MONGO_URI)
+db = client.vet_clinic
+
+# Add doctor schedules
+DOCTORS = {
+    "Dr. Emily Roberts": "General Veterinarian",
+    "Dr. John Smith": "Surgery Specialist",
+    "Dr. Sarah Chen": "Pet Dentistry"
+}
 @bot.event
 async def on_ready():
     """This event fires when the bot is connected to Discord and sets up the database."""
@@ -106,6 +150,45 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
+<<<<<<< HEAD
+    if message.author == bot.user:
+        return
+
+    try:
+        content = message.content.lower()
+        logging.info(f"Message from {message.author}: {content}")
+
+        # --- Rule-Based Logic ---
+        for intents, keywords in RULES.items():
+            if any(keyword in content for keyword in keywords):
+                response = INFO[intents]
+                await message.channel.send(response)
+                logging.info(f"Responded with: {response}")
+                return
+
+        if any(keyword in content for keyword in ['hello', 'hi', 'hey']):
+            response = "Hello there! I'm the Pet Shop bot. How can I help you today?"
+            await message.channel.send(response)
+            logging.info(f"Responded with: {response}")
+        else:
+            response = INFO['fallback']
+            await message.channel.send(response)
+            logging.info(f"Responded with: {response}")
+
+        await bot.process_commands(message)
+
+    except Exception as e:
+        logging.error("Error handling message", exc_info=True)
+
+@bot.event
+async def on_command_error(ctx, error):
+    """Tangkap error command"""
+    logging.error(f"Command error in {ctx.command}: {error}", exc_info=True)
+    await ctx.send("Oops! Something went wrong. Please try again later.")
+
+# Run bot
+bot.run(DISCORD_TOKEN)
+=======
     """This event fires whenever a message is sent in a channel the bot can see."""
     if message.author == bot.user:
         return
@@ -243,3 +326,4 @@ async def myappointments(ctx):
 # Run the bot with your token
 # Make sure to replace 'YOUR_BOT_TOKEN' with your actual token
 bot.run(token)
+>>>>>>> origin/main
