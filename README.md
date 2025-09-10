@@ -49,6 +49,27 @@ Setiap interaksi pengguna dengan bot terekam ke dalam file `logs/bot.log` untuk 
 
 ---
 
+## Setup & Run
+1. Buat database MongoDB dan simpan Mongo_URI pada file .env.
+2. Buat discord app di website discord development.
+3. Pada menu bot, simpan token dan masukkan dalam file .env.
+4. Berikan izin (permission) untuk bot melakukan aktivitas text.
+5. Clone repository ini dan masukkan .env dan mongo_uri yang telah dibuat.
+
+Install Dependencies (Direkomendasikan menggunakan virtual environment)
+```
+pip install -r requirements.txt
+```
+
+Run Bot
+```
+python petshop_bot.py
+```
+Run Tests
+```
+python -m pytest tests/test_clinic_bot.py -v 
+```
+
 ## 📖 Contoh Penggunaan
 
 Di dalam server Discord:
