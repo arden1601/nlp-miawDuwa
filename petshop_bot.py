@@ -139,30 +139,36 @@ async def on_ready():
 async def on_message(message):
     if message.author == bot.user:
         return
-    try:
-        content = message.content.lower()
-        logging.info(f"Message from {message.author}: {content}")
-        # --- Rule-Based Logic ---
-        for intents, keywords in RULES.items():
-            if any(keyword in content for keyword in keywords):
-                response = INFO[intents]
-                await message.channel.send(response)
-                logging.info(f"Responded with: {response}")
-                return
+    content = message.content.lower()
+    logging.info(f"Message from {message.author}: {content}")
 
-        if any(keyword in content for keyword in ['hello', 'hi', 'hey']):
-            response = "Hello there! I'm the Vet Clinic bot. How can I help you today?"
-            await message.channel.send(response)
-            logging.info(f"Responded with: {response}")
-        else:
-            response = INFO['fallback']
-            await message.channel.send(response)
-            logging.info(f"Responded with: {response}")
+    await bot.process_commands(message)
 
-        await bot.process_commands(message)
-
-    except Exception as e:
-        logging.error("Error handling message", exc_info=True)
+    # --- Rule-Based Logic ---
+    for intent, keywords in RULES.items():
+        if any(keyword in content for keyword in keywords):
+            if intent == 'booking':
+                await message.channel.send(
+                    "To book an appointment, use: !book \"doctor name\" \"time\"\n"
+                    "To see available doctors and times, use: !doctors\n"
+                    "To check your appointments, use: !myappointments"
+                )
+            else:
+                await message.channel.send(INFO[intent])
+            return
+    # If no rule was matched, send the fallback message
+    # In the on_message event, update the booking message
+    if intent == 'booking':
+        await message.channel.send(
+            "To book an appointment, use: !book \"doctor name\" \"time\"\n"
+            "To see available doctors and times, use: !doctors\n"
+            "To check your appointments, use: !myappointments"
+        )
+    # You can add a greeting check here for a more refined response
+    elif any(keyword in content for keyword in ['hello', 'hi', 'hey']):
+        await message.channel.send("Hello there! I'm the Vet Clinic bot. How can I help you today?")
+    else:
+        await message.channel.send(INFO['fallback'])
 
 @bot.event
 async def on_command_error(ctx, error):

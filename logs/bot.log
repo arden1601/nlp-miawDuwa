@@ -260,3 +260,152 @@ NoneType: None
 2025-09-10 01:43:48,878 - INFO - Responded with: Dr. Emily Roberts is our veterinarian on duty today! You can book an appointment through our website.
 2025-09-10 01:44:06,005 - INFO - Message from murguuyy: !doctors
 2025-09-10 01:44:06,459 - INFO - Responded with: Dr. Emily Roberts is our veterinarian on duty today! You can book an appointment through our website.
+2025-09-10 02:15:40,804 - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-09-10 02:15:40,807 - INFO - logging in using static token
+2025-09-10 02:15:42,910 - INFO - Shard ID None has connected to Gateway (Session ID: d27c8fddde94f6655e6a7c0e5b1affcc).
+2025-09-10 02:15:56,988 - INFO - Message from chmodxoneil: !myappointments
+2025-09-10 02:15:56,988 - ERROR - Error handling message
+Traceback (most recent call last):
+  File "/home/yaomoel/Coding/nlp-miawDuwa/petshop_bot.py", line 151, in on_message
+    response = INFO[intents]
+KeyError: 'booking'
+2025-09-10 02:16:04,597 - INFO - Message from chmodxoneil: !hi
+2025-09-10 02:16:05,277 - INFO - Responded with: Hello there! I'm the Vet Clinic bot. How can I help you today?
+2025-09-10 02:16:17,162 - INFO - Message from chmodxoneil: !myappointments
+2025-09-10 02:16:17,163 - ERROR - Error handling message
+Traceback (most recent call last):
+  File "/home/yaomoel/Coding/nlp-miawDuwa/petshop_bot.py", line 151, in on_message
+    response = INFO[intents]
+KeyError: 'booking'
+2025-09-10 02:16:31,970 - INFO - Message from chmodxoneil: !doctors
+2025-09-10 02:16:31,970 - ERROR - Error handling message
+Traceback (most recent call last):
+  File "/home/yaomoel/Coding/nlp-miawDuwa/petshop_bot.py", line 151, in on_message
+    response = INFO[intents]
+KeyError: 'vet'
+2025-09-10 02:22:39,004 - INFO - Shard ID None has successfully RESUMED session d27c8fddde94f6655e6a7c0e5b1affcc.
+2025-09-10 02:24:21,042 - INFO - Shard ID None has successfully RESUMED session d27c8fddde94f6655e6a7c0e5b1affcc.
+2025-09-10 02:26:07,453 - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-09-10 02:26:07,456 - INFO - logging in using static token
+2025-09-10 02:26:09,189 - INFO - Shard ID None has connected to Gateway (Session ID: 3805fb23230f90c500af6febc9fc0d58).
+2025-09-10 02:26:18,618 - INFO - Message from chmodxoneil: !doctors
+2025-09-10 02:26:18,619 - ERROR - Error handling message
+Traceback (most recent call last):
+  File "/home/yaomoel/Coding/nlp-miawDuwa/petshop_bot.py", line 156, in on_message
+    await message.channel.send(INFO[intent])
+KeyError: 'vet'
+2025-09-10 02:29:24,749 - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-09-10 02:29:24,753 - INFO - logging in using static token
+2025-09-10 02:29:26,504 - INFO - Shard ID None has connected to Gateway (Session ID: b5dbdf38c0afdd26c83faa8fa9c9f2c2).
+2025-09-10 02:29:33,998 - INFO - Message from chmodxoneil: !hi
+2025-09-10 02:29:34,921 - INFO - Responded with: Hello there! I'm the Vet Clinic bot. How can I help you today?
+2025-09-10 02:29:34,921 - ERROR - Command error in None: Command "hi" is not found
+NoneType: None
+2025-09-10 02:29:59,485 - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-09-10 02:29:59,488 - INFO - logging in using static token
+2025-09-10 02:30:01,543 - INFO - Shard ID None has connected to Gateway (Session ID: 852afbbe5cbf289a0b5c0ed00a39115f).
+2025-09-10 02:30:06,770 - INFO - Message from chmodxoneil: !hi
+2025-09-10 02:30:07,539 - INFO - Responded with: Hello there! I'm the Vet Clinic bot. How can I help you today?
+2025-09-10 02:30:07,539 - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "hi" is not found
+2025-09-10 02:30:13,832 - INFO - Message from chmodxoneil: !doctors
+2025-09-10 02:30:13,832 - ERROR - Error handling message
+Traceback (most recent call last):
+  File "/home/yaomoel/Coding/nlp-miawDuwa/petshop_bot.py", line 158, in on_message
+    await message.channel.send(INFO[intent])
+KeyError: 'vet'
+2025-09-10 02:30:38,583 - INFO - Message from chmodxoneil: !when did you open
+2025-09-10 02:30:39,521 - INFO - Responded with: I'm sorry, I didn't understand that. You can ask me about our hours, vet, address, or products!
+2025-09-10 02:30:39,521 - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "when" is not found
+2025-09-10 02:31:46,732 - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-09-10 02:31:46,738 - INFO - logging in using static token
+2025-09-10 02:31:48,785 - INFO - Shard ID None has connected to Gateway (Session ID: 7b45a52ca6fd4b52016c86ebb4d72b2d).
+2025-09-10 02:32:04,735 - INFO - Message from chmodxoneil: !hi
+2025-09-10 02:32:05,896 - INFO - Responded with: Hello there! I'm the Vet Clinic bot. How can I help you today?
+2025-09-10 02:32:05,897 - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "hi" is not found
+2025-09-10 02:33:56,363 - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-09-10 02:33:56,365 - INFO - logging in using static token
+2025-09-10 02:33:58,276 - INFO - Shard ID None has connected to Gateway (Session ID: 5d53555cda02acb29fd33e97d73af751).
+2025-09-10 02:34:01,464 - INFO - Message from chmodxoneil: !hi
+2025-09-10 02:34:05,667 - INFO - Message from chmodxoneil: !hello
+2025-09-10 02:34:16,829 - INFO - Message from chmodxoneil: !doctors
+2025-09-10 02:34:16,829 - ERROR - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/yaomoel/Coding/nlp-miawDuwa/.venv/lib/python3.10/site-packages/discord/client.py", line 504, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/yaomoel/Coding/nlp-miawDuwa/petshop_bot.py", line 157, in on_message
+    await message.channel.send(INFO[intent])
+KeyError: 'vet'
+2025-09-10 02:34:51,703 - INFO - Message from chmodxoneil: !book
+2025-09-10 02:35:56,817 - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-09-10 02:35:56,820 - INFO - logging in using static token
+2025-09-10 02:35:58,820 - INFO - Shard ID None has connected to Gateway (Session ID: f78561ba0f1e24458ad7092cbeb3e4c1).
+2025-09-10 02:36:03,887 - INFO - Message from chmodxoneil: !doctors
+2025-09-10 02:36:03,887 - ERROR - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/yaomoel/Coding/nlp-miawDuwa/.venv/lib/python3.10/site-packages/discord/client.py", line 504, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/yaomoel/Coding/nlp-miawDuwa/petshop_bot.py", line 154, in on_message
+    await message.channel.send(INFO[intent])
+KeyError: 'vet'
+2025-09-10 02:36:27,990 - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-09-10 02:36:27,993 - INFO - logging in using static token
+2025-09-10 02:36:29,939 - INFO - Shard ID None has connected to Gateway (Session ID: 390dbc24e9ae566eb524ae1df3e93172).
+2025-09-10 02:36:35,475 - INFO - Message from chmodxoneil: !doctors
+2025-09-10 02:36:35,476 - ERROR - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/yaomoel/Coding/nlp-miawDuwa/.venv/lib/python3.10/site-packages/discord/client.py", line 504, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/yaomoel/Coding/nlp-miawDuwa/petshop_bot.py", line 154, in on_message
+    await message.channel.send(INFO[intent])
+KeyError: 'vet'
+2025-09-10 02:39:37,638 - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-09-10 02:39:37,641 - INFO - logging in using static token
+2025-09-10 02:39:39,545 - INFO - Shard ID None has connected to Gateway (Session ID: c1f8dee22b4da3b67c17f64cb29edcbd).
+2025-09-10 02:39:51,494 - INFO - Message from chmodxoneil: !doctors
+2025-09-10 02:39:51,494 - ERROR - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/yaomoel/Coding/nlp-miawDuwa/.venv/lib/python3.10/site-packages/discord/client.py", line 504, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/yaomoel/Coding/nlp-miawDuwa/petshop_bot.py", line 154, in on_message
+    await message.channel.send(INFO[intent])
+KeyError: 'vet'
+2025-09-10 02:40:55,667 - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-09-10 02:40:55,670 - INFO - logging in using static token
+2025-09-10 02:40:57,419 - INFO - Shard ID None has connected to Gateway (Session ID: 62efa9433650a926cc0a95f48b7fd92a).
+2025-09-10 02:41:02,430 - INFO - Message from chmodxoneil: !doctors
+2025-09-10 02:41:02,866 - ERROR - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/yaomoel/Coding/nlp-miawDuwa/.venv/lib/python3.10/site-packages/discord/client.py", line 504, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/yaomoel/Coding/nlp-miawDuwa/petshop_bot.py", line 157, in on_message
+    await message.channel.send(INFO[intent])
+KeyError: 'vet'
+2025-09-10 02:41:50,444 - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-09-10 02:41:50,447 - INFO - logging in using static token
+2025-09-10 02:41:52,206 - INFO - Shard ID None has connected to Gateway (Session ID: 4203c2e72b653e26eabe7cf6d864c45d).
+2025-09-10 02:42:01,830 - INFO - Message from chmodxoneil: !doctors
+2025-09-10 02:42:02,558 - ERROR - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/yaomoel/Coding/nlp-miawDuwa/.venv/lib/python3.10/site-packages/discord/client.py", line 504, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/yaomoel/Coding/nlp-miawDuwa/petshop_bot.py", line 157, in on_message
+    await message.channel.send(INFO[intent])
+KeyError: 'vet'
+2025-09-10 02:42:06,695 - INFO - Message from murguuyy: !myappointments
+2025-09-10 02:42:08,228 - INFO - Message from chmodxoneil: !myappointments
+2025-09-10 02:42:46,780 - INFO - Message from chmodxoneil: !myappointments
+2025-09-10 02:43:54,638 - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-09-10 02:43:54,641 - INFO - logging in using static token
+2025-09-10 02:43:56,531 - INFO - Shard ID None has connected to Gateway (Session ID: d6252732c5d578bea6d8eab79ba9b6ce).
+2025-09-10 02:44:03,064 - INFO - Message from chmodxoneil: !myappointments
+2025-09-10 02:44:16,508 - INFO - Message from chmodxoneil: !doctors
+2025-09-10 02:44:17,032 - ERROR - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/yaomoel/Coding/nlp-miawDuwa/.venv/lib/python3.10/site-packages/discord/client.py", line 504, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/yaomoel/Coding/nlp-miawDuwa/petshop_bot.py", line 157, in on_message
+    await message.channel.send(INFO[intent])
+KeyError: 'vet'
